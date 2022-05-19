@@ -51,4 +51,40 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 
+    // form submission with AJAX
+    var form = document.getElementById("contactForm");
+
+    async function handleSubmit(event) {
+      event.preventDefault();
+      var statusWrapper = document.getElementById("submitMessageWrapper");
+      var status = document.getElementById("submitMessage");
+      var data = new FormData(event.target);
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          statusWrapper.classList.add("text-white");
+          status.innerHTML = "Your message was successfully sent!";
+          form.reset();
+        } else {
+          response.json().then(data => {
+            if (Object.hasOwn(data, 'errors')) {
+              statusWrapper.classList.add("text-danger");
+              status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+            } else {
+              statusWrapper.classList.add("text-danger");
+              status.innerHTML = "Oops! There was a problem sending your message.";
+            }
+          })
+        }
+      }).catch(error => {
+        statusWrapper.classList.add("text-danger");
+        status.innerHTML = "Oops! There was a problem sending your message.";
+      });
+    }
+    form.addEventListener("submit", handleSubmit)
 });
