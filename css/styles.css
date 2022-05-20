@@ -11453,6 +11453,11 @@ header.masthead .masthead-heading {
     margin-bottom: 4rem;
   }
 }
+
+#features ul {
+  text-align: left;
+}
+
 #code .code-item {
   max-width: 26rem;
   margin-left: auto;
