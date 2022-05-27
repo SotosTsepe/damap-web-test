@@ -224,17 +224,17 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <!-- Name input-->
-                                <input class="form-control" id="name" name="name" type="text" placeholder="Your Name *" required/>
+                                <input class="form-control" id="name" name="name" type="text" placeholder="Your Name *" onkeyup='enableSubmit()' required/>
                             </div>
                             <div class="form-group">
                                 <!-- Email address input-->
-                                <input class="form-control" id="email" name="email" type="email" placeholder="Your Email *" required/>
+                                <input class="form-control" id="email" name="email" type="email" placeholder="Your Email *" onkeyup='enableSubmit()' required/>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group form-group-textarea mb-md-0">
                                 <!-- Message input-->
-                                <textarea class="form-control" id="message" name="message" placeholder="Your Message *" required></textarea>
+                                <textarea class="form-control" id="message" name="message" placeholder="Your Message *" onkeyup='enableSubmit()' required></textarea>
                             </div>
                         </div>
                     </div>
@@ -243,7 +243,7 @@
                         <div class="fw-bolder" id="submitMessage"></div>
                     </div>
                     <!-- Submit Button-->
-                    <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="submit">Send Message</button></div>
+                    <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="submit" disabled>Send Message</button></div>
                 </form>
             </div>
         </section>

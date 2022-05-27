@@ -93,3 +93,19 @@ window.addEventListener('DOMContentLoaded', event => {
     }
     form.addEventListener("submit", handleSubmit)
 });
+
+// enable form submit button when all elements are not empty
+function enableSubmit() {
+    var inputs = document.getElementsByClassName('form-control');
+    var btn = document.getElementById('submitButton');
+    var isValid = true;
+
+    for (var i = 0; i < inputs.length; i++) {
+        var changedInput = inputs[i];
+        if (changedInput.value.trim() === "" || changedInput.value === null) {
+            isValid = false;
+            break;
+        }
+    }
+    btn.disabled = !isValid;
+}
