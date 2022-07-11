@@ -1,5 +1,5 @@
 Repository for hosting information for DAMAP  
-Info website: https://sotostsepe.github.io/damap-website/  
+Info website: https://sotostsepe.github.io/damap-web-test/  
 
 Website: https://damap-qa.apps.dev.csd.tuwien.ac.at/
 
