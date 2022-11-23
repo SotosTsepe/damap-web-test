@@ -11607,6 +11607,10 @@ header.masthead .masthead-heading {
   text-align: left;
 }
 
+#finger_img:hover {
+  transform: scale(1.3); /* 130% zoom */
+}
+
 #code .code-item {
   max-width: 26rem;
   margin-left: auto;
